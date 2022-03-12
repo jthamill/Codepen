@@ -44,6 +44,7 @@ img {
   display: grid;
   grid-template-rows: auto 1fr 1fr auto;
   height: 100vh;
+  color: white;
 }
 
 .pen {
@@ -54,13 +55,47 @@ img {
   align-items: center;
   background: black;
   border-bottom: 5px solid var(--grey);
-  color: white;
   padding: 10px;
 }
 
 .code {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  background: #1b2b41;
+}
+
+.editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.editor__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.editor__code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border-right: 5px solid grey;
+  border-bottom: 5px solid grey;
+}
+
+.editor__number {
+  display: block;
+  padding: 0 10px;
+}
+
+.editor__input {
+  resize: none;
+  background: none;
+  border: 0;
+  color: grey;
+  font-size: 1rem;
+  line-height: 23px;
 }
 
 .preview {
@@ -74,4 +109,26 @@ img {
   padding: 10px;
   border-radius: 5px;
   font-size: 1rem;
+  position: relative; /*for yellow bar on dirty button*/
+}
+
+.button--small {
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.button--dirty:before {
+  background: #ffc600;
+  display: block;
+  content: "";
+  width: calc(100% - 6px);
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+
+.settings {
+  padding: 5px;
+  background: bklack;
+  border-top: solid grey;
 }
